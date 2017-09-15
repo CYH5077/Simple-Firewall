@@ -1,17 +1,12 @@
 <h1><b> Simple Firewall</b></h1><br>
-<br>
-<br>
-<h2><b> Build </b></h2><br>
-<br>
+<h2><b><font color="Blue"> Build </font></b></h2><br>
 <pre>
 $ make
 $ cd build 
 $ sudo insmod firewall.ko
 </pre><br>
 <br>
-<br>
-<h2><b> User command </b></h2><br>
-<br>
+<h2><b><font color="Blue"> User command </font></b></h2><br>
 <pre>
 Add IP rule
 $ ./usercommand -rule create -saddr 192.168.0.1 -daddr 192.168.0.1
