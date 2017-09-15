@@ -1,0 +1,26 @@
+#ifndef __FIREWALL_CONST_HEADER__
+#define __FIREWALL_CONST_HEADER__
+
+//룰 추가 제거 플래그
+enum RULE {
+	RULE_CREATE = 0,
+	RULE_DELETE,
+	RULE_DELETE_IP,
+	RULE_DELETE_PORT,
+	RULE_NONE
+};
+
+// 패킷 라우팅.
+enum PACKET_CHECK {
+	PACKET_ACCEPT = 0,
+	PACKET_DROP
+};
+
+// 필터 프로콜.
+enum PROTOCOL_VALUE {
+	TCP_PROTOCOL = 1 << 0,
+	UDP_PROTOCOL = 1 << 1,
+	IP_PROTOCOL  = 1 << 2
+};
+
+#endif

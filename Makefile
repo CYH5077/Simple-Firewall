@@ -1,12 +1,14 @@
-MODULEFILES = $(wildcard *.c)
+DIRS = ./module/ ./usercommand/
 
-obj-m += firewall.o
-firewall-objs += ./module.o ./packet.o
-
-KERNDIR = /lib/modules/$(shell uname -r)/build
-BUILDDIR = $(shell pwd)
+TARGET_PATH = $(shell pwd)/build
+export TARGET_PATH
 
 all:
-	$(MAKE) -C $(KERNDIR) M=$(BUILDDIR) modules
+	@for dir in $(DIRS); do\
+		$(MAKE) -C $$dir all;\
+	done
 clean:
-	$(MAKE) -C $(KERNDIR) M=$(BUILDDIR) clean
+	rm -rf $(TARGET_PATH)/*
+	@for dir in $(DIRS); do\
+		$(MAKE) -C $$dir clean;\
+	done
