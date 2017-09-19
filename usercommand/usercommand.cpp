@@ -66,7 +66,8 @@ bool UserCommand::CommandStart(){
 	enum PROTOCOL_VALUE protocol;
 	unsigned int saddr, daddr;
 	unsigned short sport, dport;
-	unsigned int address;	
+	unsigned int address;
+	address = saddr = daddr = sport = dport = 0;
 	for(auto & iter : option_data){
 		if(iter.first == "-rule") {
 			rule = ruleOptionData(iter.second);
